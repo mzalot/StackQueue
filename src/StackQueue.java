@@ -53,4 +53,31 @@ public class StackQueue <T>{
         }
     }
 
+    //peek method
+    public T peek(){
+        //if there is no data return null
+        if(counter == 0){
+            return null;
+        }
+        //if there is one piece of data, peek it
+        if(counter == 1){
+            return (T) stack1.peek();
+        }
+        //if multiple pieces of data do same process as above to access the data
+        //go through and remove the elements and add to the other stack
+        for(int i = 0; i<counter; i++){
+            stack2.push(stack1.pop());
+        }
+        //store the data to return
+        StackNode returnStack = stack1.peek();
+        //move all the data back to stack1
+        for(int i = 0; i<counter;i++){
+            stack1.push(stack2.pop());
+        }
+        //return the data
+        //return the piece of data at the bottom
+        return (T) returnStack;
+
+    }
+
 }
