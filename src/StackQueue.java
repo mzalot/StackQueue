@@ -6,7 +6,7 @@
  Collaboration:
  Date: 1/10/22
  **/
-public class StackQueue {
+public class StackQueue <T>{
     //instance data
     private int counter;
     private Stack stack1;
@@ -18,4 +18,13 @@ public class StackQueue {
         stack1 = new Stack();
         stack2 = new Stack();
     }
+
+    //enqueue method
+    public void enqueue(T data){
+        //add the data to the first stack
+        stack1.push(data);
+        //increase the counter
+        counter++;
+    }
+
 }
