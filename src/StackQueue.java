@@ -79,5 +79,15 @@ public class StackQueue <T>{
         return (T) returnStack;
 
     }
+    //isEmpty method
+    public boolean isEmpty(){
+        boolean b = counter>0;
+        return !b;
+    }
+
+    //size method
+    public int size(){
+        return counter;
+    }
 
 }
