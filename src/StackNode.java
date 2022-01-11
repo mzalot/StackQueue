@@ -72,9 +72,9 @@ public class StackNode <T>{
     public String toString(){
         //check if value is null
         if(value == null){
-            return "Node: null";
+            return "null";
         }
-        return "Node: " + value.toString();
+        return value.toString();
     }
 
     //.equals method
