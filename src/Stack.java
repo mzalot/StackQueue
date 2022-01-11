@@ -72,4 +72,3 @@ public class Stack <T>{
         return (StackNode)currentNode;
     }
 }
-

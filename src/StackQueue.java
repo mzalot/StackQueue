@@ -28,19 +28,23 @@ public class StackQueue <T>{
     }
 
     //dequeue method
-    public void dequeue(){
+    public T dequeue(){
+        //variable to store the data removed to return it
+        StackNode pop;
         //if there is one piece of data, pop it
         if(counter == 1){
-            stack1.pop();
+            //pop the data and store the return in a variable
+            pop = stack1.pop();
         }
         //if stack is greater than one, remove data until last one from stack1 and add to stack2
-        else if(counter > 1){
+        else{
             //go through and remove the elements and add to the other stack
             for(int i = 0; i<counter; i++){
                 stack2.push(stack1.pop());
             }
             //remove the piece of data at the bottom
-            stack1.pop();
+            //pop the data and store the return in a variable
+            pop = stack1.pop();
             //move all the data back to stack1
             for(int i = 0; i<counter;i++){
                 stack1.push(stack2.pop());
@@ -51,6 +55,8 @@ public class StackQueue <T>{
         if(counter > 0){
             counter--;
         }
+        //return the value removed
+        return (T) pop;
     }
 
     //peek method
